@@ -6,7 +6,7 @@ Turn a topic or a pasted story into a captioned, vertical (1080×1920) short vid
 topic / story
    │
    ▼
-① Groq · Llama 3.3 70B   →  narration script + 5–8 scene prompts
+① Groq · Llama 3.3 70B   →  narration script + 11-15 scene prompts
 ② Edge-TTS               →  voiceover .mp3 (+ word-level timing)
 ③ Pollinations.ai        →  one image per scene
 ④ Edge timings / Whisper →  word-level caption timing

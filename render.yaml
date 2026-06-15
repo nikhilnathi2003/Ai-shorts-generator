@@ -1,0 +1,31 @@
+# Render Blueprint. In Render: New > Blueprint, point at this repo.
+# Backend must be Docker (not the native Python env) so ffmpeg is available.
+services:
+  - type: web
+    name: ai-shorts-backend
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /health
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: SUPABASE_BUCKET
+        value: videos
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: CAPTION_SOURCE
+        value: edge
+      - key: TTS_VOICE
+        value: en-US-AndrewMultilingualNeural
+      - key: IMAGE_MODEL
+        value: flux
+      - key: ENABLE_MUSIC
+        value: "true"
+      - key: ENABLE_MOTION
+        value: "false"
